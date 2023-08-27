@@ -17,13 +17,10 @@ class Sensor(models.Model):
 class Measurement(models.Model):
     """Измерение температуры на объекте."""
 
-    temperature = models.FloatField(verbose_name='Температура')
+    temperature = models.FloatField(verbose_name='Температура') 
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, related_name='measurements')
     created_at = models.DateTimeField(
         auto_now_add=True
-    )
-    updated_at = models.DateTimeField(
-        auto_now=True
     )
 
     class Meta:
